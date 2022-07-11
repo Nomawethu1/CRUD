@@ -1,0 +1,32 @@
+.registration{
+    position: fixed;
+    width: 40%;
+    padding: 30px;
+    background: rgb(230, 227, 227);
+    border: 1px solid rgb(211, 211, 211);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(211, 211, 211);
+}
+.input:focus{
+    outline: none;
+}
+.btn{
+    padding: 8px 30px;
+    background: rgb(64, 205, 241);
+    border-radius: 2px;
+    text-align: center;
+    margin-top: 10px;
+    color: #fff;
+    font-weight: 700;
+    transition: 0.4s ease;
+    
+}
+.btn:hover{
+    background: rgb(18, 127, 155);
+}

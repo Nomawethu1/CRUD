@@ -11,6 +11,7 @@ import { ViewItemComponent } from './Components/view-item/view-item.component';
 import { SearchComponent } from './Components/search/search.component';
 import { LogoutComponent } from './Components/logout/logout.component';
 import { EditItemComponent } from './Components/edit-item/edit-item.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { EditItemComponent } from './Components/edit-item/edit-item.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

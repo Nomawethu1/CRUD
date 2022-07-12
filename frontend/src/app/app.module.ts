@@ -12,6 +12,7 @@ import { SearchComponent } from './Components/search/search.component';
 import { LogoutComponent } from './Components/logout/logout.component';
 import { EditItemComponent } from './Components/edit-item/edit-item.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormvalidationComponent } from './Components/formvalidation/formvalidation.component';
 
 // Added imports
 
@@ -26,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ViewItemComponent,
     SearchComponent,
     LogoutComponent,
-    EditItemComponent
+    EditItemComponent,
+    FormvalidationComponent
   ],
   imports: [
     BrowserModule,

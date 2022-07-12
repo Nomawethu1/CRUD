@@ -1,60 +1,78 @@
 
-<div class="container m-5 p-2 rounded mx-auto bg-light shadow">
-    <h2>New Item</h2>
-    <div class="btn">
-
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand">Navbar</a>
+      <form class="d-flex">
+        <a class="navbar-brand">PROFILE</a>
+        <a class="navbar-brand">LOGOUT</a>
+      </form>
     </div>
-<div class="container col-11">
-<div class="row m-1 p-3">
-    <h5>Tittle</h5>
-    <div class="col col-8 mx-auto">
-        
-        <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
-            <div class="col">
-                <input class="form-control form-control-lg border-0 add-todo-input bg-transparent rounded" type="text" placeholder="Add new ..">
-            </div>
-            
-            
+  </nav>
+
+
+<div class="register-form">
+<form  [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="container m-5 p-2 rounded mx-auto bg-light shadow pt-5">
+        <h2>New Item</h2>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          
+          <button class="btn me-md-2">cancel</button>
+          <button class="btn1 me-md-2" type="submit" >Save</button>
+          
         </div>
-    </div>
-</div>
-
-
-<div class="row m-1 p-3">
-    <h5>Description</h5>
-    <div class="col col-8 mx-auto">
-        
-        <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
-            <div class="col">
-                <input class="form-control form-control-lg border-0 add-todo-input bg-transparent rounded" type="text" placeholder="Add new ..">
-            </div>
-            <div class="col-auto m-0 px-2 d-flex align-items-center">
-                <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
-            </div>
+    <div class="container col-11">
+    <div class="row m-1 p-3">
+        <h5>Tittle</h5>
+        <div class="col col-8 mx-auto">
             
-        </div>
-    </div>
-</div>
-
-
-<div class="row m-1 p-3">
-    <h5>Due Date</h5>
-    <div class="col col-8 mx-auto">
-        <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
-            <div class="col">
-                <input class="form-control form-control-lg border-0 add-todo-input bg-transparent rounded" type="date" placeholder="29/04/2022">
-            </div>
-            <div class="col-auto m-0 px-2 d-flex align-items-center">
-                <label class="text-secondary my-2 p-0 px-1 view-opt-label due-date-label d-none">Due date not set</label>
-                <i class="fa fa-calendar my-2 px-1 text-primary btn due-date-button" data-toggle="tooltip" data-placement="bottom" title="Set a Due date"></i>
-                <i class="fa fa-calendar-times-o my-2 px-1 text-danger btn clear-due-date-button d-none" data-toggle="tooltip" data-placement="bottom" title="Clear Due date"></i>
-            </div>
-            <div class="col-auto px-0 mx-0 mr-2">
+            <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
+                <div class="col">
+                    <input class="form-control form-control-lg border-0 add-todo-input bg-transparent rounded" type="text"  formControlName="title" placeholder="Add new ..">
+                </div>
+                
                 
             </div>
         </div>
     </div>
+    
+    
+    <div class="row m-1 p-3">
+        <h5>Description</h5>
+        <div class="col col-8 mx-auto">
+            
+            <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
+                
+                <div class="col">
+                    <textarea class="form-control" id="exampleFormControlTextarea1"  formControlName="description" rows="3" placeholder="Description"></textarea>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row m-1 p-3">
+        <h5>Due Date</h5>
+        <div class="col col-8 mx-auto">
+            <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
+                <div class="col">
+                    <input class="form-control form-control-lg border-0 add-todo-input bg-transparent rounded"  formControlName="due_Date" type="date" placeholder="29/04/2022">
+                </div>
+                <div class="col-auto m-0 px-2 d-flex align-items-center">
+                    <label class="text-secondary my-2 p-0 px-1 view-opt-label due-date-label d-none">Due date not set</label>
+                    <i class="fa fa-calendar my-2 px-1 text-primary btn due-date-button" data-toggle="tooltip" data-placement="bottom" title="Set a Due date"></i>
+                    <i class="fa fa-calendar-times-o my-2 px-1 text-danger btn clear-due-date-button d-none" data-toggle="tooltip" data-placement="bottom" title="Clear Due date"></i>
+                </div>
+                <div class="col-auto px-0 mx-0 mr-2">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    </div>
+</form>
 </div>
 
-</div>
-</div>
+<!-- {{dummy}} -->

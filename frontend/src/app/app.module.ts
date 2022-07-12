@@ -10,9 +10,8 @@ import { SearchComponent } from './Components/search/search.component';
 import { LogoutComponent } from './Components/logout/logout.component';
 import { EditItemComponent } from './Components/edit-item/edit-item.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
-
 import { FormvalidationComponent } from './Components/formvalidation/formvalidation.component';
+import { AppRoutingModule } from './app-routing.module';
 
 // Added imports
 

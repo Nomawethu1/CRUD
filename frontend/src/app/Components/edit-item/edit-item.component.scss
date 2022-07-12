@@ -1,0 +1,42 @@
+// .navbar{
+// position: absolute;
+// width: 1440px;
+// height: 50px;
+// left: 0px;
+// top: 0px;
+// background: #FFFFFF;
+// }
+// .container{
+//     background-color: #FFFFFF;
+     
+// }
+.m-5{
+    background-color: rgba(255, 255, 255, 1);
+}
+.btn1{
+    background-color: rgba(0, 0, 0, 0.08);
+    width: 100px;
+}
+.btn{
+    background-color: rgba(0, 0, 0, 1);
+    width: 100px;
+    text-decoration-color: #FFFFFF;
+    font-style: white;
+}
+h4{
+ position: absolute;
+}
+body {
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.6;
+}
+@media screen and (max-width: 600px) {     
+    .search-bar{         
+        width: 100%; }      
+        .table{         
+            display: flex;         
+            flex-wrap: wrap;         
+            flex-direction: row;         
+            margin: 0 auto;         
+            overflow: scroll; 
+        } }

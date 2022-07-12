@@ -1,1 +1,24 @@
-<p>login works!</p>
+
+<div class="wrapper">
+
+    <div class="block">
+
+        <form [formGroup]="login">
+ 
+            <h2>LOGIN</h2>
+            <input type="text" placeholder="Enter Username" class="inp" formControlName="Username"/>
+            <input type="text" placeholder="Enter Email" class="inp" formControlName="email"/>
+            <div class="btns">
+                <button (click)="loginSubmit(login.value)" [disabled]="login.invalid" >Login</button>
+                <button (click)="gotToRegister">Register</button>
+
+            </div>
+
+        </form>
+
+
+
+    </div>
+
+
+</div>

@@ -1,12 +1,52 @@
-<section class="registration">
-    <div class="container">
-        <form class="frm">
-            <input type="text" class="input" placeholder="Username" name="username">
-            <div class="text-center">
-                <button type="submit" class="btn">Register</button>
-            </div>
-            
-        </form>
+<!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
 
+<body>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+          <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+            <div class="card-img-left d-none d-md-flex">
+              <!-- Background image for card set in CSS! -->
+            </div>
+            <div class="card-body p-4 p-sm-5">
+              <h5 class="card-title text-center mb-5 fw-light fs-5">Register</h5>
+              <br>
+              <br>
+             
+              <form>
+  
+                <div class="form-floating mb-3">
+                    <p>Username</p>
+                  <input type="text" class="form-control" id="floatingInputUsername" placeholder="username" required autofocus>
+                  
+                </div>
+  
+                <div class="form-floating mb-3">
+                    <p>Password</p>
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  
+                </div>
+  
+                <div class="form-floating mb-3">
+                    <p>Confirm Password</p>
+                  <input type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Confirm Password">
+                  
+                </div>
+                <br>
+  
+                <div class="d-grid mb-2">
+                  <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Register</button>
+                </div>
+
+                <br>
+                <br>
+                <br>
+                <span class="signin-link">Already have an account? Click here to <a href="login">Login</a></span>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
+  </body>
+  

@@ -7,19 +7,15 @@
  
             <h2>LOGIN</h2>
             <input type="text" placeholder="Enter Username" class="inp" formControlName="Username"/>
-            <input type="text" placeholder="Enter Email" class="inp" formControlName="email"/>
+            <input type="text" placeholder="Enter Password" class="inp" formControlName="Password"/>
             <div class="btns">
                 <button (click)="loginSubmit(login.value)" [disabled]="login.invalid" >Login</button>
                 <button (click)="gotToRegister">Register</button>
 
             </div>
-
-            <h6>Don't have an account? Register
-
-      <a [routerLink]="['/user/bob']" [queryParams]="{debug: true}" fragment="education">
-        https://trello.com/b/sZa5lfbL/to-do-list </a>
-            </h6> 
-            
+            <a href="https://trello.com/b/sZa5lfbL/to-do-list">
+                Don't have an account? Register
+            </a>
         </form>
     </div>
 </div>

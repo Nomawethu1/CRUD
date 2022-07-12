@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-.wrapper{
+ .wrapper{
     display: flex;
-    justify-content: center;
-    align-items: center;
+     justify-content: center;
+     align-items: center;
     height: 100vh;
 }
 
@@ -10,23 +10,23 @@ button{
     padding: 15px 10px;
     background-color: skyblue;
     margin-right: 5px;
-    color: whitesmoke;
+    color: grey;
     font-weight: 600;
     border: none;
     width: 100px;
-    cursor: pointer;
-}
+     cursor: pointer;
+ }
 
-button:disabled{
+
+ button:disabled{
     background-color: gray;
-    opacity: 0.8;
-    color: whitesmoke;
+     opacity: 0.8;
+     color: whitesmoke;
     cursor: not-allowed;
-}
+ }
 
-.block{
-    width: 320px;
-    background: linear-gradient(270deg, skyblue, white);
-    height: 350px;
-    display: flex;
-}
+ .block{
+     width: 320px;     background: linear-gradient(270deg, skyblue, white);
+   height: 350px;
+     display: flex;
+ }

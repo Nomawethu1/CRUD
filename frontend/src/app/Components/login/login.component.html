@@ -3,22 +3,20 @@
 
     <div class="block">
 
-        <form [formGroup]="login">
+        <form>
  
             <h2>LOGIN</h2>
-            <input type="text" placeholder="Enter Username" class="inp" formControlName="Username"/>
-            <input type="text" placeholder="Enter Email" class="inp" formControlName="email"/>
+            <input type="text" placeholder="Enter Username" class="inp" formControlName="username"/>
+            <input type="password" placeholder="Enter Password" class="inp" formControlName="password"/>
             <div class="btns">
-                <button (click)="loginSubmit(login.value)" [disabled]="login.invalid" >Login</button>
-                <button (click)="gotToRegister">Register</button>
+                <button  [disabled]="login.invalid" >Login</button>
 
             </div>
-
+            <a href="https://trello.com/b/sZa5lfbL/to-do-list">
+                Don't have an account? Register
+            </a>
         </form>
-
-
-
     </div>
-
-
 </div>
+
+

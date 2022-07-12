@@ -2,6 +2,7 @@
 .block{
     justify-content: center;
     align-items: center;
+
     form{
         display: flex ;
         justify-content: center;
@@ -15,6 +16,12 @@
             font-weight: 600;
         }
 
+        h6{
+            color: gray;
+            font-family: sans-serif;
+            font-weight: 600;
+        }
+
         .inp{
 
             width: 85%;
@@ -23,9 +30,13 @@
         }
 
         .btns{
-            display: flex;
+            display:flex;
             width: 100%;
-            justify-content: space-between;
+            justify-content:center;
         }
     }
+}
+a{
+    margin-top: 20px;
+    text-decoration: none;
 }

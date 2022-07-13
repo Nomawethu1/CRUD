@@ -24,7 +24,7 @@ export class EditItemComponent implements OnInit {
     )
   }
   
-  onSubmit():void{
+  onSave():void{
     console.log(JSON.stringify(this.form.value,null,2));
 
    
@@ -37,9 +37,6 @@ export class EditItemComponent implements OnInit {
     this.form.reset();
   }
 
-   
-  
-
 
 
   // reset(){
@@ -48,6 +45,15 @@ export class EditItemComponent implements OnInit {
   // save(){
   //   console.log("esdtrftyghjkl");
   // }
-
-
 }
+
+let title:Array<string>;
+title = ['HTML'];
+
+let description:Array<string>
+description = ['Learn theoratical  HTML basics and practicals '];
+
+let due_date:Array<number>
+due_date = [2000];
+
+

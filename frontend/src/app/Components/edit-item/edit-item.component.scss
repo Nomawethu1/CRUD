@@ -30,13 +30,35 @@ body {
     font-family: "Open Sans", sans-serif;
     line-height: 1.6;
 }
-@media screen and (max-width: 600px) {     
-    .search-bar{         
-        width: 100%; }      
-        .table{         
-            display: flex;         
-            flex-wrap: wrap;         
-            flex-direction: row;         
-            margin: 0 auto;         
-            overflow: scroll; 
-        } }
+// @media screen and (max-width: 500px) {     
+//     .search-bar{         
+//         width: 100%; }      
+//         .table{         
+//             display: flex;         
+//             flex-wrap: wrap;         
+//             flex-direction: row;         
+//             margin: 0 auto;         
+//             overflow: scroll; 
+//         } }
+@media  screen and (max-width: 800px) {
+    .container{
+        width: 80%;
+        height: 68vh;
+    }
+    .containers{
+        height: 50vh;
+    }
+    .inner-container{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    table tr{
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 50vw;
+    }
+    .save,.cancel{
+
+        width: auto;
+    }
+}

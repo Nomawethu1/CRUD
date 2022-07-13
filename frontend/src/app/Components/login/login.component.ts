@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-login',
@@ -10,13 +13,13 @@ export class LoginComponent implements OnInit {
 
   login! : FormGroup;
   router: any;
- 
-  constructor(private fb:FormBuilder) { }
+
+  constructor() { }
 
   ngOnInit(): void {
-   this.login = this.fb.group({
-        username:[''],
-        password:['']
+   this.login = new FormGroup({
+        username: new FormControl(['']),
+        password: new FormControl([''])
    })
   }
 

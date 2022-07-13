@@ -1,9 +1,17 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">       
+    <a class="navbar-brand">Home</a>       
+    <form class="d-flex">         
+    <a class="navbar-brand" href="login">LOGIN</a>        
+    <a class="navbar-brand" href="register">REGISTER</a>       
+    </form></div> 
+    </nav>
 
 <div class="wrapper">
 
     <div class="block">
 
-        <form>
+        <form [formGroup] = "login" (ngSubmit)="onSubmit()">
  
             <h2>LOGIN</h2>
             <input type="text" placeholder="Enter Username" class="inp" formControlName="username"/>
@@ -12,7 +20,7 @@
                 <button  [disabled]="login.invalid" >Login</button>
 
             </div>
-            <a href="https://trello.com/b/sZa5lfbL/to-do-list">
+            <a href="register">
                 Don't have an account? Register
             </a>
         </form>

@@ -9,9 +9,9 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 export class AddItemComponent implements OnInit {
 
   form: FormGroup = new FormGroup({
-    tittle: new FormControl(''),
+    itemname: new FormControl(''),
     description: new FormControl(''),
-    due_Date: new FormControl(''),
+    duedate: new FormControl(''),
 
   });
   submitted = false;
@@ -25,9 +25,9 @@ export class AddItemComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.formBuilder.group(
       {
-        title: [''],
+        itemname: [''],
         description: [''],
-        due_Date: [''],
+        duedate: [''],
       }
     )
 //for getting items from local storage

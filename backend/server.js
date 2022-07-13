@@ -5,7 +5,6 @@ const app = express(); //Initialize express
 require("./app/configs/dotenv"); //Import your environmental configs
 const client = require("./app/configs/db");
 //const user = require("./routes/users");
-const edit = require("./app/routes/edit.route");
 
 app.use(express.json());
 app.use(cors());
@@ -30,7 +29,7 @@ app.get("/", (req, res) =>{
 });
 
 
-app.put('/edit/:id',edit.updateEdit)
+require('./app/routes/edit.route')(app)
 
 
 

@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
@@ -12,6 +10,8 @@ import { SearchComponent } from './Components/search/search.component';
 import { LogoutComponent } from './Components/logout/logout.component';
 import { EditItemComponent } from './Components/edit-item/edit-item.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormvalidationComponent } from './Components/formvalidation/formvalidation.component';
+import { AppRoutingModule } from './app-routing.module';
 
 // Added imports
 
@@ -26,7 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ViewItemComponent,
     SearchComponent,
     LogoutComponent,
-    EditItemComponent
+    EditItemComponent,
+    FormvalidationComponent
   ],
   imports: [
     BrowserModule,

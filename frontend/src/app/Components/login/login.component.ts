@@ -8,23 +8,21 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  login:any = FormGroup;
+  login! : FormGroup;
   router: any;
  
   constructor(private fb:FormBuilder) { }
 
   ngOnInit(): void {
    this.login = this.fb.group({
-
-    name:['', Validators.required],
-    email:['', Validators.compose([Validators.required,Validators.email])]
-
+        username:[''],
+        password:['']
    })
   }
 
-   loginSubmit(data:any){
-
-    console.log(data);   
+ 
+  onSubmit(){
+    console.log(this.login.value)
   }
 
   gotToRegister(){

@@ -7,6 +7,6 @@ module.exports = app => {
     
      // create your routes here!!
     app.post('/add', create.createItem)
-    app.put('/edit/:id', update.updateEdit)
+    app.put('/edit/:id',update.updateEdit)
     
   }

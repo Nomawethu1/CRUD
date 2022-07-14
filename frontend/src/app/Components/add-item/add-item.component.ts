@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, Form, FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { ItemsService } from 'src/app/services/items.service';
 
 @Component({
   selector: 'app-add-item',
@@ -7,8 +8,9 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
   styleUrls: ['./add-item.component.scss']
 })
 export class AddItemComponent implements OnInit {
+  [x: string]: any;
 
-  form: FormGroup = new FormGroup({
+  form = new FormGroup({
     itemname: new FormControl(''),
     description: new FormControl(''),
     duedate: new FormControl(''),
@@ -18,8 +20,11 @@ export class AddItemComponent implements OnInit {
 //for getting items from local storage
   dummy:any;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private addItemService: ItemsService, private formBuilder:FormBuilder) { 
+    // this.createItem();
+  }
 
+ 
 
 
   ngOnInit(): void {
@@ -32,15 +37,46 @@ export class AddItemComponent implements OnInit {
     )
 //for getting items from local storage
     this.dummy = localStorage.getItem("form")
-  }
+
+    // this.itemsService.sendGetRequest().subscribe((data: any[])=>{
+    //   console.log(data);
+    //   this.products = data;
+ 
+}
 
 
 
   onSubmit(): void {
 
     console.log(JSON.stringify(this.form.value, null, 2));
+    console.log(this.form.value)
 
+  let  details = {
+      itemname: this.form.value.itemname,
+      description: this.form.value.description,
+      duedate: this.form.value.duedate
+    
+    }
+    // console.log("this detsils"+ details.description)
+    this.createItem(details)
     localStorage.setItem("form",JSON.stringify(this.form.value, null, 2))
   }
+
+
+  createItem(createItem:any) {
+    this.addItemService.createItem(createItem).subscribe(
+      (resp) => {
+        console.log(resp);
+        
+      },
+      (err: any) => {
+        console.log("wow"+err);
+      }
+    );
+  }
+  
+
+  
+
 
 }

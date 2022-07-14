@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     console.log(this.login.value)
   }
-
+ 
   gotToRegister(){
     this.router.navigate(['register']);
   }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+
 
 
 
@@ -12,20 +14,37 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   login! : FormGroup;
-  router: any;
-
-  constructor() { }
+  Form = new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl('')
+  });
+  //router: any;
+ 
+  constructor(private auth:AuthenticationService,
+    private router:Router,
+    private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-   this.login = new FormGroup({
-        username: new FormControl(['']),
-        password: new FormControl([''])
+   this.login = new FormGroup(
+    {
+        username: new FormControl('', Validators.required),
+        password: new FormControl('', Validators.required)
    })
   }
 
  
   onSubmit(){
     console.log(this.login.value)
+    // const user = window.localStorage.setItem('User', JSON.stringify(this.login.value));
+const user ={
+  username:this.Form.value.username,
+  password: this.Form.value.password
+}
+
+    if(user != null){
+      this.router.navigate(['/search']);
+     
+    }
   }
  
   gotToRegister(){

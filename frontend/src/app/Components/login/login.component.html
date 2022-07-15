@@ -1,3 +1,16 @@
+ <nav class="navbar navbar-light bg-light"> 
+<div class="container-fluid">   
+    <a class="navbar-brand">Todo</a>  
+    <form class="d-flex">   
+    <a class="navbar-brand" href="login">LOGIN</a>   
+    <a class="navbar-brand" href="register">REGISTER</a>  
+     </form></div> 
+    </nav> 
+
+
+
+
+
 
 <div class="wrapper">
 
@@ -9,10 +22,10 @@
             <input type="text" placeholder="Enter Username" class="inp" formControlName="username"/>
             <input type="password" placeholder="Enter Password" class="inp" formControlName="password"/>
             <div class="btns">
-                <button  [disabled]="login.invalid" >Login</button>
+                <button   ><a href="search">Login</a></button>
 
             </div>
-            <a href="#">
+            <a href="register">
                 Don't have an account? Register
             </a>
         </form>

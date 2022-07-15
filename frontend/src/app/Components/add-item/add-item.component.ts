@@ -17,15 +17,10 @@ export class AddItemComponent implements OnInit {
 
   });
   submitted = false;
-//for getting items from local storage
-  dummy:any;
+  //for getting items from local storage
+  dummy: any;
 
-  constructor(private addItemService: ItemsService, private formBuilder:FormBuilder) { 
-    // this.createItem();
-  }
-
- 
-
+  constructor(private addItemService: ItemsService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group(
@@ -35,14 +30,7 @@ export class AddItemComponent implements OnInit {
         duedate: [''],
       }
     )
-//for getting items from local storage
-    this.dummy = localStorage.getItem("form")
-
-    // this.itemsService.sendGetRequest().subscribe((data: any[])=>{
-    //   console.log(data);
-    //   this.products = data;
- 
-}
+  }
 
 
 
@@ -51,32 +39,33 @@ export class AddItemComponent implements OnInit {
     console.log(JSON.stringify(this.form.value, null, 2));
     console.log(this.form.value)
 
-  let  details = {
+    let details = {
       itemname: this.form.value.itemname,
       description: this.form.value.description,
       duedate: this.form.value.duedate
-    
+
     }
+
     // console.log("this detsils"+ details.description)
     this.createItem(details)
-    localStorage.setItem("form",JSON.stringify(this.form.value, null, 2))
+    localStorage.setItem("form", JSON.stringify(this.form.value, null, 2))
   }
 
 
-  createItem(createItem:any) {
+  createItem(createItem: any) {
     this.addItemService.createItem(createItem).subscribe(
       (resp) => {
         console.log(resp);
-        
+
       },
       (err: any) => {
-        console.log("wow"+err);
+        console.log("wow" + err);
       }
     );
   }
-  
 
-  
+
+
 
 
 }

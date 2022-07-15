@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
+
+  
+   
+
   constructor() { }
 
 
@@ -14,6 +18,17 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
+  // search(){
+
+  //   console.log('Title: Description:, Due_Date');
+  // }
+myFunction(){
+
+  console.log('im clicked')
+}
+
 
  
 

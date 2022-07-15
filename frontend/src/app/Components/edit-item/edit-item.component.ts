@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import {EditService} from 'src/app/services/edit.service';
+import { EditService } from 'src/app/service/edit.service';
 
 
 @Component({

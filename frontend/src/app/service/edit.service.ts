@@ -16,7 +16,7 @@ export class EditService {
   }
 
   editItems(items:any){
-    return this.http.put("http://localhost:3000/edit/1",items);
+    return this.http.put("http://localhost:3000/edit/3",items);
 
   }
 

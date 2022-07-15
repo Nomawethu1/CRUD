@@ -12,11 +12,16 @@ export class EditService {
   id :any
   
   addItems(items:any){
-    return this.http.post("http://localhost:3000/add",items)
+    return this.http.post("http://localhost:3000/add",items);
   }
-  editItems(items:any){
-    return this.http.put("http://localhost:3000/edit/1",items)
 
+  editItems(items:any){
+    return this.http.put("http://localhost:3000/edit/1",items);
+
+  }
+
+  getItems(){
+    return this.http.get("http://localhost:3000/getitem");
   }
 
 }

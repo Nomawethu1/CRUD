@@ -23,6 +23,7 @@ app.get('/', (request, response) => {
 //   app.post('/items',todopost.createItem);
 
 require('./route/item.route')(app)
+require('./route/user.route')(app)
 
 
   app.listen(port, () => {

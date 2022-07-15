@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, Form, FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { EditService } from 'src/app/service/edit.service';
 import { ItemsService } from 'src/app/services/items.service';
+import { EditItemComponent } from '../edit-item/edit-item.component';
 
 @Component({
   selector: 'app-add-item',
@@ -20,7 +22,7 @@ export class AddItemComponent implements OnInit {
   //for getting items from local storage
   dummy: any;
 
-  constructor(private addItemService: ItemsService, private formBuilder: FormBuilder) { }
+  constructor(private addService:EditService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group(
@@ -53,8 +55,8 @@ export class AddItemComponent implements OnInit {
 
 
   createItem(createItem: any) {
-    this.addItemService.createItem(createItem).subscribe(
-      (resp) => {
+    this.addService.addItems(createItem).subscribe(
+      resp => {
         console.log(resp);
 
       },

@@ -3,7 +3,7 @@
 
     <div class="block">
 
-        <form>
+        <form [formGroup]="login">
  
             <h2>LOGIN</h2>
             <input type="text" placeholder="Enter Username" class="inp" formControlName="username"/>
@@ -12,7 +12,7 @@
                 <button  [disabled]="login.invalid" >Login</button>
 
             </div>
-            <a href="https://trello.com/b/sZa5lfbL/to-do-list">
+            <a href="#">
                 Don't have an account? Register
             </a>
         </form>

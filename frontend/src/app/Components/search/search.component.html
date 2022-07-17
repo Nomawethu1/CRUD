@@ -4,17 +4,14 @@
    
 
 
-<div class="container">
-  <form>
 
-    <section class="vh-100">
-      <div class="container py-5 h-100">
+ 
+    <div class="container m-5 p-2 rounded mx-auto bg-light shadow">
+
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col col-lg-9 col-xl-7">
-            <div class="card rounded-3">
-              <div class="card-body p-4">
-
-                <form>
+           
+              
                   <div class="row m-1 p-4">
                     <div class="col">
                       <div class="p-1 h1 text-center mx-auto display-inline-block">
@@ -24,16 +21,13 @@
                             <div class="col-12 text-left">
 
 
-
-
-
                               <div class="input-group gontse">
                                 <input class="form-control py-2 border-left border" type="search"
-                                  id="example-search-input" placeholder="search by title">
+                                  id="example-search-input" placeholder="search by title"
+                                  
+                             >
 
-
-
-                                <button class="btn" type="button" > 
+                                <button class="btn btn btn" type="button" > 
                                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-search" viewBox="0 0 16 16">
                                     <path
@@ -54,13 +48,13 @@
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                       <div class="col-12 text-right">
-                        <button type="submit" class="btn" >
-                          <a href="add">New Item</a>
+                        <button type="submit" class="btn1 me-md-2 col-4"  routerLink="/add">
+                          New Item
                         </button>
                       </div>
                     </div>
                   </div>
-                </form>
+                <!-- </form> -->
 
                 <table class="table mb-4">
                   <thead>
@@ -81,16 +75,16 @@
                       <td>
                         <div class="d-flex justify-content-between fridah">
 
-                          <button class="btn2" type="text">View</button>
+                          
+                          <button type="submit" class="btn btn-dark free me-md-5">View</button>
+                          <button type="submit" class="btn btn-dark free me-md-5" routerLink="/edit">Edit</button>
+                          <button type="submit" class="btn btn-dark free me-md-5">Delete</button>
+
 
                         
 
                          
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                            <path
-                              d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                          </svg>
+                         
                         </div>
                       </td>
                     </tr>
@@ -101,9 +95,10 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        <!-- </div> -->
+      <!-- </div> -->
+    
+    <!-- </section> -->
+  <!-- </div> -->
+  <!-- </form> -->
 
-    </section>
-  </form>
-</div>

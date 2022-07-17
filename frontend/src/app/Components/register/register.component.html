@@ -2,17 +2,17 @@
 <nav class="navbar navbar-light bg-light"> 
   <div class="container-fluid">   
       <a class="navbar-brand">Todo</a>  
-      <form class="d-flex">   
-      <a class="navbar-brand" href="login">LOGIN</a>   
-      <a class="navbar-brand" href="register">REGISTER</a>  
+      <form class="d-flex form1">   
+        <button type="button" class="btn btn link" routerLink="/profile">PROFILE</button>
+        <button type="button" class="btn btn link" routerLink="/">LOGOUT</button>
        </form></div> 
       </nav> 
-
+      <div class="container m-5 p-2 rounded mx-auto bg-light shadow">
       <div class="wrapper">
 
         <div class="block">
     
-            <form [formGroup]="register">
+            <form [formGroup]="register"> 
      
                 <h2>REGISTER</h2>
                
@@ -21,13 +21,11 @@
                 <input type="password" placeholder="Enter Password" class="inp" formControlName="password"/>
               
                 <input type="password" placeholder="Confirm Password" class="inp" formControlName="password"/>
-                <div class="btns">
-                    <button   ><a href="login">Register</a></button>
-    
-                </div>
-                <a href="">
-                    Don't have an account? Register
-                </a>
+                <button class="btn4 me-md-2 col-4" type="submit" routerLink="/login">Register</button>
+
+                
+<button type="button" class="btn btn link" routerLink="/">Have an account? Login</button>
+               
             </form>
         </div>
     </div>

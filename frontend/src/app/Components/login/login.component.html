@@ -11,25 +11,24 @@
 
 
 
-
+    <div class="container m-5 p-2 rounded mx-auto bg-light shadow">
 <div class="wrapper">
 
-    <div class="block">
+     <div class="block"> 
 
-        <form [formGroup]="login">
- 
+         <form [formGroup]="login"> 
+
             <h2>LOGIN</h2>
             <input type="text" placeholder="Enter Username" class="inp" formControlName="username"/>
             <input type="password" placeholder="Enter Password" class="inp" formControlName="password"/>
-            <div class="btns">
-                <button   ><a href="search">Login</a></button>
+           
+                <button class="btn4 me-md-2 col-4" type="submit" routerLink="/search">Login</button>
 
-            </div>
-            <a href="register">
-                Don't have an account? Register
-            </a>
+           
+            <button type="button" class="btn btn-link free" routerLink="/register">Don't have an account? Register</button>
         </form>
     </div>
 </div>
+ </div> 
 
 

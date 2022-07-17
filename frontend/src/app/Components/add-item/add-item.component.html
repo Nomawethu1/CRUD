@@ -7,18 +7,18 @@
         <h2>New Item</h2>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
           
-          <button class="btn me-md-2 "routerlink="\search">cancel</button>
-          <button class="btn1 me-md-2" type="submit" ><a href="search">Save</a></button>
+          <button class="btn1 me-md-2 col-4" type="submit" routerlink="/search">cancel</button>
+          <button class="btn1 me-md-2 col-4 " type="submit" (click)="onSubmit()"   routerLink="/search">Save</button>
           
         </div>
     <div class="container col-11">
     <div class="row m-1 p-3">
-        <h5>Tittle</h5>
+        <h5>Title</h5>
         <div class="col col-8 mx-auto">
             
             <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
                 <div class="col">
-                    <input class="form-control form-control-lg border-0 add-todo-input bg-transparent rounded" type="text"  formControlName="itemname" placeholder="Add new ..">
+                    <input class="form-control form-control-lg border-0 add-todo-input bg-transparent rounded" type="text"  formControlName="itemname" placeholder="">
                 </div>
                 
                 
@@ -34,7 +34,7 @@
             <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
                 
                 <div class="col">
-                    <textarea class="form-control" id="exampleFormControlTextarea1"  formControlName="description" rows="3" placeholder="Description"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1"  formControlName="description" rows="3" placeholder=""></textarea>
                 </div>
                 
             </div>

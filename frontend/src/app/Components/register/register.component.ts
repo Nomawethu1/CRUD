@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -8,28 +8,28 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  register! : FormGroup;
-  router: any;
+   register! : FormGroup;
+   router: any;
 
   constructor() { }
 
   ngOnInit(): void {
 
-    this.register = new FormGroup(
+     this.register = new FormGroup(
       {
           username: new FormControl('', Validators.required),
           password: new FormControl('', Validators.required)
-     })
+      })
   }
 
 
 
-  onSubmit(){
-    console.log(this.register.value)
-  }
+   onSubmit(){
+   console.log(this.register.value)
+   }
 
-  gotToRegister(){
+   gotToRegister(){
     this.router.navigate(['login']);
-  }
+   }
 
 }

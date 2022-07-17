@@ -24,19 +24,10 @@ items : any;
       this.items = data;
       
     })
+
+
+    
   }
 
-
-  // search(){
-
-  //   console.log('Title: Description:, Due_Date');
-  // }
-// myFunction(){
-
-//   console.log('im clicked')
-// }
-
-
- 
 
 }

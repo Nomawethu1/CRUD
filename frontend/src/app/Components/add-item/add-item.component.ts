@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, Form, FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { EditService } from 'src/app/service/edit.service';
+import { ItemsService } from 'src/app/services/items.service';
+import { EditItemComponent } from '../edit-item/edit-item.component';
 
 @Component({
   selector: 'app-add-item',
@@ -7,20 +10,19 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
   styleUrls: ['./add-item.component.scss']
 })
 export class AddItemComponent implements OnInit {
+  [x: string]: any;
 
-  form: FormGroup = new FormGroup({
+  form = new FormGroup({
     itemname: new FormControl(''),
     description: new FormControl(''),
     duedate: new FormControl(''),
 
   });
   submitted = false;
-//for getting items from local storage
-  dummy:any;
+  //for getting items from local storage
+  dummy: any;
 
-  constructor(private formBuilder: FormBuilder) { }
-
-
+  constructor(private addService:EditService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group(
@@ -30,8 +32,6 @@ export class AddItemComponent implements OnInit {
         duedate: [''],
       }
     )
-//for getting items from local storage
-    this.dummy = localStorage.getItem("form")
   }
 
 
@@ -39,8 +39,35 @@ export class AddItemComponent implements OnInit {
   onSubmit(): void {
 
     console.log(JSON.stringify(this.form.value, null, 2));
+    console.log(this.form.value)
 
-    localStorage.setItem("form",JSON.stringify(this.form.value, null, 2))
+    let details = {
+      itemname: this.form.value.itemname,
+      description: this.form.value.description,
+      duedate: this.form.value.duedate
+
+    }
+
+    // console.log("this detsils"+ details.description)
+    this.createItem(details)
+    localStorage.setItem("form", JSON.stringify(this.form.value, null, 2))
   }
+
+
+  createItem(createItem: any) {
+    this.addService.addItems(createItem).subscribe(
+      resp => {
+        console.log(resp);
+
+      },
+      (err: any) => {
+        console.log("wow" + err);
+      }
+    );
+  }
+
+
+
+
 
 }

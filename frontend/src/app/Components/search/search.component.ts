@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EditService } from 'src/app/service/edit.service';
 
 @Component({
   selector: 'app-search',
@@ -7,13 +8,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+items : any;
+  
+   
+
+  constructor(private service:EditService) { }
 
 
  
 
   ngOnInit(): void {
+
+    this.service.getItems().subscribe(data =>{
+      console.log(data);
+      this.items = data;
+      
+    })
   }
+
+
+  // search(){
+
+  //   console.log('Title: Description:, Due_Date');
+  // }
+myFunction(){
+
+  console.log('im clicked')
+}
+
 
  
 

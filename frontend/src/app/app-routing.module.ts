@@ -1,13 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddItemComponent } from './Components/add-item/add-item.component';
 import { EditItemComponent } from './Components/edit-item/edit-item.component';
 import { LoginComponent } from './Components/login/login.component';
+import { RegisterComponent } from './Components/register/register.component';
 import { SearchComponent } from './Components/search/search.component';
 
 const routes: Routes = [
-  {path:'edit-item',component:EditItemComponent},
+  {path:'edit',component:EditItemComponent},
   {path:'login',component:LoginComponent},
-  {path: 'search', component:SearchComponent}
+  {path:'register',component:RegisterComponent},
+  {path:'search',component:SearchComponent},
+  {path:'add',component:AddItemComponent}
+
 ];
 
 @NgModule({
@@ -15,6 +20,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-
-

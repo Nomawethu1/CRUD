@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { EditService } from 'src/app/service/edit.service';
+
 
 @Component({
   selector: 'app-edit-item',
@@ -12,23 +14,41 @@ export class EditItemComponent implements OnInit {
     description: new FormControl(''),
     due_date: new FormControl('')});
 
-  constructor(private FormBuilder:FormBuilder) { }
+  constructor(private FormBuilder:FormBuilder,private EditService:EditService) { }
 
   ngOnInit(): void {
     this.form = this.FormBuilder.group(
       {
         title:[''],
-        descriotion:[''],
+        description:[''],
         due_date:[''],
       }
     )
   }
-  
+ info:any
   onSave():void{
-    console.log(JSON.stringify(this.form.value,null,2));
+
+    const todo = {
+      title: this.form.value.title,
+      description: this.form.value.description,
+      due_date: this.form.value.due_date
+
+      
+    }
+    console.log(todo);
+
+    this.EditService.editItems(todo).subscribe((data:any)=>{
+      this.info=data
+
+      console.log("Passed on form",this.info)
+
+    })
+
+    
 
    
-    localStorage.setItem("form",JSON.stringify(this.form.value,null,2))
+    localStorage.setItem("form",todo.title);
+    
   }
   onReset(): void {
     console.log(JSON.stringify(this.form.value,null,2));
@@ -46,14 +66,5 @@ export class EditItemComponent implements OnInit {
   //   console.log("esdtrftyghjkl");
   // }
 }
-
-let title:Array<string>;
-title = ['HTML'];
-
-let description:Array<string>
-description = ['Learn theoratical  HTML basics and practicals '];
-
-let due_date:Array<number>
-due_date = [2000];
 
 

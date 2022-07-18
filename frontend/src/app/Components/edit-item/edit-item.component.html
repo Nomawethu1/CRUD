@@ -2,17 +2,15 @@
     <form [formGroup]="form" (ngSubmit)="onSave()">
         <div class="container m-5 p-2 rounded mx-auto bg-light shadow">
             <div class="row m-1 p-4">
-                <div class="col">
+                <div class="col-4">
                     <div class="p-1 h1  text-center mx-auto display-inline-block">
-                        <h4>Edit Item</h4>
+                        <h4 class="edit">Edit Item</h4>
                     </div>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button class="btn1 me-md-2" type="submit"  >Reset</button>
-                    <button class="btn me-md-2" type="submit"><a style="color: white;">Save</a></button>
+                    <button class="btn1 me-md-2 col-4" type="submit"  >Reset</button>
+                    <button class="btn me-md-2 col-4"  type="submit"><a style="color: white;">Save</a></button>
                  
-                    <!-- <button class="btn1  me-md-2" type="button" (click)="reset()" routerLink="/Reset" >Reset</button>  -->
-                    <!-- <button class="btn  me-md-2" type="button" (click)="save()" routerLink="/save"  ><a style="color: white;">Save</a></button>  -->
                 </div>
             </div>
             <div class="row m-1 p-3">

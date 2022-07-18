@@ -25,12 +25,12 @@ export class LoginComponent implements OnInit {
     private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-   this.login = new FormGroup(
-    {
-        username: new FormControl('', Validators.required),
-        password: new FormControl('', Validators.required)
+    this.login = new FormGroup(
+  {
+       username: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required)
    })
-  }
+   }
 
  
   onSubmit(){

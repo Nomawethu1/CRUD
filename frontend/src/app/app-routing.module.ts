@@ -5,13 +5,19 @@ import { EditItemComponent } from './Components/edit-item/edit-item.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { SearchComponent } from './Components/search/search.component';
+import { LogoutComponent } from './Components/logout/logout.component';
+import { ProfileComponent } from './Components/profile/profile.component';
+
 
 const routes: Routes = [
   {path:'edit',component:EditItemComponent},
-  {path:'login',component:LoginComponent},
+  {path:'',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'search',component:SearchComponent},
-  {path:'add',component:AddItemComponent}
+  {path:'add',component:AddItemComponent},
+  {path:'logout',component:LogoutComponent},
+  {path:'profile',component:ProfileComponent}
+  
 
 ];
 

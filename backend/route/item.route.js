@@ -7,6 +7,7 @@ module.exports = app => {
     const update = require('../controller/edit-item');
     const getItem=require('../controller/getItems');
     const getItemById=require('../controller/getItemById');
+    const delItem= require('../controller/delete-Item');
 
     
      // create your routes here!!
@@ -14,6 +15,7 @@ module.exports = app => {
     app.put('/edit/:id',update.updateEdit)
     app.get('/getItem',getItem.getItems)
     app.get('/getItem/:id',getItemById.getItemById)
+    app.delete('/delete/:id',delItem.deleteItem)
    
     
   }

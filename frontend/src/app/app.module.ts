@@ -11,8 +11,9 @@ import { EditItemComponent } from './Components/edit-item/edit-item.component';
 import { NavComponent } from './navbar/nav/nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
+import { ProfileComponent } from './Components/profile/profile.component';
 import { LoginComponent } from './Components/login/login.component';
-import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -26,7 +27,8 @@ import { CommonModule } from '@angular/common';
     SearchComponent,
     LogoutComponent,
     EditItemComponent,
-    NavComponent
+    NavComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

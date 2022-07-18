@@ -1,52 +1,31 @@
 <!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
+<nav class="navbar navbar-light bg-light"> 
+  <div class="container-fluid">   
+      <a class="navbar-brand">Todo</a>  
+      <form class="d-flex form1">   
+        <button type="button" class="btn btn link" routerLink="/profile">PROFILE</button>
+        <button type="button" class="btn btn link" routerLink="/">LOGOUT</button>
+       </form></div> 
+      </nav> 
+      <div class="container m-5 p-2 rounded mx-auto bg-light shadow">
+      <div class="wrapper">
 
-<body>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-10 col-xl-9 mx-auto">
-          <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
-            <div class="card-img-left d-none d-md-flex">
-              <!-- Background image for card set in CSS! -->
-            </div>
-            <div class="card-body p-4 p-sm-5">
-              <h5 class="card-title text-center mb-5 fw-light fs-5">Register</h5>
-              <br>
-              <br>
-             
-              <form>
-  
-                <div class="form-floating mb-3">
-                    <p>Username</p>
-                  <input type="text" class="form-control" id="floatingInputUsername" placeholder="username" required autofocus>
-                  
-                </div>
-  
-                <div class="form-floating mb-3">
-                    <p>Password</p>
-                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                  
-                </div>
-  
-                <div class="form-floating mb-3">
-                    <p>Confirm Password</p>
-                  <input type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Confirm Password">
-                  
-                </div>
-                <br>
-  
-                <div class="d-grid mb-2">
-                  <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Register</button>
-                </div>
+        <div class="block">
+    
+            <form [formGroup]="register"> 
+     
+                <h2>REGISTER</h2>
+               
+                <input type="text" placeholder="Enter Username" class="inp" formControlName="username"/>
+               
+                <input type="password" placeholder="Enter Password" class="inp" formControlName="password"/>
+              
+                <input type="password" placeholder="Confirm Password" class="inp" formControlName="password"/>
+                <button class="btn4 me-md-2 col-4" type="submit" routerLink="/login">Register</button>
 
-                <br>
-                <br>
-                <br>
-                <span class="signin-link">Already have an account? Click here to <a href="login">Login</a></span>
-              </form>
-            </div>
-          </div>
+                
+<button type="button" class="btn btn link" routerLink="/">Have an account? Login</button>
+               
+            </form>
         </div>
-      </div>
     </div>
-  </body>
-  

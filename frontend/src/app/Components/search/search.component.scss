@@ -18,9 +18,37 @@ align-items: flex-start;
 
 }
 
+.btn1{
+    background-color: black;
+    width: 100px;
+    color: white;
+    font-style: white;
+}
+
 .fridah{
 
-    // padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 12px;
+    padding-right: 12px;
+    
+}
+
+.btn3{
+
+    height: 40px;
+    width: 70px;
+    background-color:black;
+    color: white;
+}
+
+.free{
+
+    padding: 10px;
+    border-radius:10px;
+    // -moz-border-radius: 5px;
+    // -webkit-border-radius: 5px;
+    margin:auto;
+    width: 100%;
+    // height: auto;
+    background-color: black;
     
 }

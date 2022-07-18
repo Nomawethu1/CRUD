@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
- import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from 'express';
 
 
 @Component({
@@ -8,28 +9,88 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-   register! : FormGroup;
-   router: any;
 
-  constructor() { }
+  Form! : FormGroup;
+
+  submitted = false;
+
+  isSuccessful = false;
+
+  isSignUpFailed = false;
+
+  errorMessage = '';
+
+
+
+  constructor(
+
+    private router:Router) { }
+
+
 
   ngOnInit(): void {
 
-     this.register = new FormGroup(
-      {
-          username: new FormControl('', Validators.required),
-          password: new FormControl('', Validators.required)
-      })
+    // this.Form = new FormGroup({
+
+    //   firstname: ['', Validators.required],
+
+    //   lastname: ['', Validators.required],
+
+    //   email: ['', [Validators.required, Validators.email]],
+
+    //   phonenumber:  ['', [Validators.required, Validators.pattern('[0-9]{3}-[0-9]{3}-[0-9]{4}'), Validators.maxLength(12)]],
+
+    //   password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(40)]],
+
+    //   confirmpassword: ['', Validators.required],
+
+    //   usertype: ['', Validators.required],
+
+    // },
+
+    // );
+
+
+    this.Form = new FormGroup({
+      email : new FormControl('',[Validators.required, Validators.email] ),
+      password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(40)]),
+      newpassword: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(40)])
+    })
+
+  }
+
+  get f():{ [key: string]: AbstractControl }{
+
+    return this.Form.controls;
+
   }
 
 
 
-   onSubmit(){
-   console.log(this.register.value)
-   }
+  onSubmit():void{
 
-   gotToRegister(){
-    this.router.navigate(['login']);
-   }
+    this.submitted = true;
 
+    let usertype = this.Form.value.usertype;
+
+    let status = true;
+
+
+
+    let user = {
+
+      firstname : this.Form.value.firstname,
+
+      lastname: this.Form.value.lastname,
+
+      email: this.Form.value.email,
+
+      phonenumber : this.Form.value.phonenumber,
+
+      status : status,
+
+      password : this.Form.value.password,
+
+    }
+  }
 }

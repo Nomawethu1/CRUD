@@ -8,15 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  storedUser = false;
+  
   constructor() { }
 
   ngOnInit(): void {
+    this.checkUser()
   }
 
-  onLogout(){  
-
-    
-      
+  onLogout(){   
   }  
+
+
+
+  checkUser(){
+    var user = window.localStorage.getItem('user');
+console.log(user);
+     
+    if (user != null) {
+     this.storedUser = true;
+     console.log("there is a user in local storage");
+    }
+    else{
+     console.log("no user in local storage");
+     
+    }
+  }
   
 }

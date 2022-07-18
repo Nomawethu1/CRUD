@@ -1,11 +1,4 @@
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">       
-    <a class="navbar-brand">Home</a>       
-    <form class="d-flex">         
-    <a class="navbar-brand" href="login">LOGIN</a>        
-    <a class="navbar-brand" href="register">REGISTER</a>       
-    </form></div> 
-    </nav>
+
 
 
 
@@ -21,13 +14,14 @@
             <h2>LOGIN</h2>
             <label>Username</label>
             <input type="text" placeholder="Enter Username" class="inp" formControlName="username"/>
+            <div class="invalid-feedback">A valid email is required!</div>
+                    
             <label>Password</label>
             <input type="password" placeholder="Enter Password" class="inp" formControlName="password"/>
            
-                <button class="btn4 me-md-2 col-4" type="submit" routerLink="/search">Login</button>
+                <button class="btn4 me-md-2 col-4" type="button" (click)="loginUser()">Login</button>
 
-           
-            <button type="button" class="btn btn-link free" routerLink="/register">Don't have an account? Register</button>
+                <button type="button" class="btn btn-link free" routerLink="/register">Don't have an account? Register</button>
         </form>
     </div>
 </div>

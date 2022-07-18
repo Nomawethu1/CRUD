@@ -11,7 +11,7 @@ import { ProfileComponent } from './Components/profile/profile.component';
 
 const routes: Routes = [
   {path:'edit',component:EditItemComponent},
-  {path:'',component:LoginComponent},
+  {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'search',component:SearchComponent},
   {path:'add',component:AddItemComponent},

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
  import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from 'express';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -79,17 +80,9 @@ export class RegisterComponent implements OnInit {
 
     let user = {
 
-      firstname : this.Form.value.firstname,
-
-      lastname: this.Form.value.lastname,
-
       email: this.Form.value.email,
-
-      phonenumber : this.Form.value.phonenumber,
-
-      status : status,
-
       password : this.Form.value.password,
+      confirmpassword : this.Form.value.confirmpassword,
 
     }
   }

@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
 
-  constructor(private userServivce: UserService) { }
+  constructor(private userServivce: UserService) { } //inject dependencies into the component class
 
 
 
@@ -32,12 +32,13 @@ export class RegisterComponent implements OnInit {
 
   }
 
+  //function returns type 
   get f(): { [key: string]: AbstractControl } {
     return this.form.controls;
   }
 
 
-
+//a method that allows users to submit their personal details 
   onSubmit(): void {
 
     this.submitted = true;

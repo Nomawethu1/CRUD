@@ -18,7 +18,8 @@ import { map } from 'rxjs/operators';
 })
 export class ApiService {
 
-  baseUrl = 'http://localhost:4000/';
+  //connecting backend to frontend
+  baseUrl = 'http://localhost:4200/';
 
   constructor(private _http: HttpClient) {
   }

@@ -1,6 +1,8 @@
 import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 
@@ -22,7 +24,10 @@ export class LoginComponent implements OnInit {
 
   constructor(private auth: AuthenticationService,
     private router: Router,
-    private activeRoute: ActivatedRoute) { }
+    private activeRoute: ActivatedRoute,
+    private _api: ApiService, 
+    private _auth: AuthService, 
+    private _router:Router) { }
 
   ngOnInit(): void {
     this.login = new FormGroup(

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
- import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -11,7 +11,23 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  Form! : FormGroup;
+  Form = new FormGroup({
+
+    firstname: new FormControl(''),
+
+    lastname: new FormControl(''),
+
+    email: new FormControl(''),
+
+    phonenumber: new FormControl(''),
+
+    password: new FormControl(''),
+
+    confirmPassword: new FormControl(''),
+
+    usertype: new FormControl(''),
+
+  });
 
   submitted = false;
 
@@ -23,7 +39,9 @@ export class RegisterComponent implements OnInit {
 
 
 
-  constructor(
+  constructor(private formBuilder: FormBuilder, 
+
+    private userService : AuthenticateService, 
 
     private router:Router) { }
 
@@ -31,32 +49,25 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.Form = new FormGroup({
+    this.Form = this.formBuilder.group({
 
-    //   firstname: ['', Validators.required],
+      firstname: ['', Validators.required],
 
-    //   lastname: ['', Validators.required],
+      lastname: ['', Validators.required],
 
-    //   email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email]],
 
-    //   phonenumber:  ['', [Validators.required, Validators.pattern('[0-9]{3}-[0-9]{3}-[0-9]{4}'), Validators.maxLength(12)]],
+      phonenumber:  ['', [Validators.required, Validators.pattern('[0-9]{3}-[0-9]{3}-[0-9]{4}'), Validators.maxLength(12)]],
 
-    //   password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(40)]],
+      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(40)]],
 
-    //   confirmpassword: ['', Validators.required],
+      confirmpassword: ['', Validators.required],
 
-    //   usertype: ['', Validators.required],
+      usertype: ['', Validators.required],
 
-    // },
+    },
 
-    // );
-
-
-    this.Form = new FormGroup({
-      email : new FormControl('',[Validators.required, Validators.email] ),
-      password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(40)]),
-      newpassword: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(40)])
-    })
+    );
 
   }
 
@@ -80,9 +91,17 @@ export class RegisterComponent implements OnInit {
 
     let user = {
 
+      firstname : this.Form.value.firstname,
+
+      lastname: this.Form.value.lastname,
+
       email: this.Form.value.email,
+
+      phonenumber : this.Form.value.phonenumber,
+
+      status : status,
+
       password : this.Form.value.password,
-      confirmpassword : this.Form.value.confirmpassword,
 
     }
   }

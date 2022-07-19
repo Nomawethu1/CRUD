@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
- import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -8,28 +9,60 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-   register! : FormGroup;
-   router: any;
+  register!: FormGroup;
+  router: any;
 
-  constructor() { }
+  form!: FormGroup
+  submitted = false;
+  isSuccessful = false;
+  isSignUpFailed = false;
+
+  constructor(private userServivce: UserService) { } //inject dependencies into the component class
+
+
 
   ngOnInit(): void {
 
-     this.register = new FormGroup(
-      {
-          username: new FormControl('', Validators.required),
-          password: new FormControl('', Validators.required)
-      })
+    this.form = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(40)]),
+      confirmpassword: new FormControl('', [Validators.required])
+    },
+    );
+
+  }
+
+  //function returns type 
+  get f(): { [key: string]: AbstractControl } {
+    return this.form.controls;
+  }
+
+
+//a method that allows users to submit their personal details 
+  onSubmit(): void {
+
+    this.submitted = true;
+    let user = {
+      email: this.form.value.email,
+      password: this.form.value.password,
+    }
+    console.log(user)
+
+
+    this.addUser(user);
+
+    this.router.navigate(['/login'])
+  }
+
+
+  addUser(user: any) {
+    this.userServivce.adduser(user).subscribe((res: any) => {
+      console.log(res);
+
+    })
   }
 
 
 
-   onSubmit(){
-   console.log(this.register.value)
-   }
-
-   gotToRegister(){
-    this.router.navigate(['login']);
-   }
 
 }

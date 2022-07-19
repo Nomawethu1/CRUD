@@ -1,15 +1,21 @@
 
 
-    <div class="container m-5 p-2 rounded mx-auto bg-light shadow ">
+    <nav class="navbar navbar-light bg-light"> 
+        <div class="container-fluid">   
+            <a class="navbar-brand">Todo</a>  
+            <form class="d-flex">   
+            <a class="navbar-brand" href="login">LOGIN</a>   
+            <a class="navbar-brand" href="register">REGISTER</a>  
+             </form></div> 
+            </nav> 
+
+             <div class="container ">
         <div class="wrapper">
             <div class="block"> 
 
-        
+  
 
-                
-
-
-                        <form [formGroup]="Form" (ngSubmit)="onSubmit()">
+                        <form [formGroup]="register" (ngSubmit)="onSubmit()">
 
                             <h2>REGISTER</h2>
 
@@ -19,7 +25,7 @@
 
                                 <div class="form-group col-md-6 mb-4">
 
-                                    <input type="text" formControlName="email" placeholder="email" class="inp" [ngClass]="{ 'is-invalid':submitted && f['email'].errors }"/>
+                                    <input type="text" formControlName="email" placeholder="Email" class="orm-control" [ngClass]="{ 'is-invalid':submitted && f['email'].errors }"/>
 
                                     <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
 
@@ -39,7 +45,7 @@
 
                                 <div class="form-group col-md-6 mb-4">
 
-                                    <input type="text" placeholder="Enter Username" class="inp" formControlName="username" [ngClass]="{ 'is-invalid':submitted && f['password'].errors }"/>
+                                    <input type="text" placeholder="Enter Username" class="orm-control" formControlName="username" [ngClass]="{ 'is-invalid':submitted && f['password'].errors }"/>
 
                                     <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
 
@@ -58,7 +64,7 @@
 
                                     <div class="form-group col-md-6 mb-4">
     
-                                        <input type="password" formControlName="confirmpassword" placeholder="Corfirm password" class="inp" [ngClass]="{ 'is-invalid': submitted && f['confirmpassword'].errors }" />
+                                        <input type="password" formControlName="confirmpassword" placeholder="Corfirm Password" class="orm-control" [ngClass]="{ 'is-invalid': submitted && f['confirmpassword'].errors }" />
     
                                         <div *ngIf="submitted && f['confirmpassword'].errors" class="invalid-feedback">
                                             <div *ngIf="f['confirmpassword'].errors['required']">Confirm Password is required</div>
@@ -72,7 +78,8 @@
                                 </div>
                                     
                                 
-                                    <button class="btn4 me-md-2 col-4" type="submit" routerLink="/login">Register</button>
+                                    <button class="btn4 me-md-2 col-4" type="submit" >Register</button>
+                                    
                                     <br>
                                     <button type="button" class="btn btn-link free" routerLink="/login">Already have an account? Login</button>
 

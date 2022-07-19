@@ -16,5 +16,17 @@ export class AuthenticationService {
 
   login(user : any){
     return this.http.post(`${baseUrl}login`,user);
-  }
+
+
+  //  getUserDetails() {
+  //   if(localStorage.getItem('userData')){
+  //     return localStorage.getItem('userData')
+  //   }
+  //                   }
+  //   function getUserDetails() {
+  //     throw new Error('Function not implemented.');
+  //   }
+  // }
 }
+}
+

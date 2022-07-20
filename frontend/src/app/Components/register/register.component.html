@@ -22,7 +22,7 @@
 
                                 <div class="form-group col-md-6 mb-4">
 
-                                    <input type="text" formControlName="email" placeholder="Email" class="orm-control" [ngClass]="{ 'is-invalid':submitted && f['email'].errors }"/>
+                                    <input type="text" formControlName="email" placeholder="Enter Email" class="orm-control" [ngClass]="{ 'is-invalid':submitted && f['email'].errors }"/>
 
                                     <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
 
@@ -42,7 +42,7 @@
 
                                 <div class="form-group col-md-6 mb-4">
 
-                                    <input type="text" placeholder="Enter Username" class="orm-control" formControlName="username" [ngClass]="{ 'is-invalid':submitted && f['password'].errors }"/>
+                                    <input type="text" placeholder="Enter Password" class="orm-control" formControlName="password" [ngClass]="{ 'is-invalid':submitted && f['password'].errors }"/>
 
                                     <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
 
@@ -75,7 +75,7 @@
                                 </div>
                                     
                                 
-                                    <button class="btn4 me-md-2 col-4" type="submit" routerLink="/login">Register</button>
+                                    <button class="btn4 me-md-2 col-4" type="submit">Register</button>
                                     
                                     <br>
                                     <button type="button" class="btn btn-link free" routerLink="/login">Already have an account? Login</button>

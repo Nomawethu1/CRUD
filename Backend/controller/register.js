@@ -1,4 +1,5 @@
 const bcrypt = require("bcrypt");
+SECRET_KEY="dgdxfqfhchgq"
 
 const pool = require("../config/config");
 
@@ -55,7 +56,7 @@ exports.register = async (req, res) => {
   catch (err) {
     console.log(err);
     res.status(500).json({
-      error: "Database error while registring user!", //Database connection error
+      error: "Database error while registering user!", //Database connection error
     });
   };
 }

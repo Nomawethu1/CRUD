@@ -1,5 +1,4 @@
 const bcrypt = require("bcrypt");
-SECRET_KEY="dgdxfqfhchgq"
 
 const pool = require("../config/config");
 
@@ -43,12 +42,10 @@ exports.register = async (req, res) => {
             }
           })
         if (flag) {
-          const token = jwt.sign( //Signing a jwt token
-            {
-              email: user.email
-            },
-            process.env.SECRET_KEY
-          );
+          // const token = jwt.sign({
+          //     email: user.email},process.env.SECRET_KEY
+          // );
+          // user.token = token;
         };
       });
     }

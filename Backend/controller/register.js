@@ -1,4 +1,5 @@
 const bcrypt = require("bcrypt");
+SECRET_KEY="dgdxfqfhchgq"
 
 const pool = require("../config/config");
 

@@ -22,7 +22,7 @@ export class EditService {
   }
 
   getItems():Observable<any>{
-    return this.http.get<any>("http://localhost:3000/getitem");
+    return this.http.get<any>("http://localhost:3000/getItems");
   }
 
 }

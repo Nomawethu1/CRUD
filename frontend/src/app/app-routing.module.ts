@@ -12,7 +12,7 @@ import { ProfileComponent } from './Components/profile/profile.component';
 const routes: Routes = [
   {path:'edit',component:EditItemComponent},
   {path:'login',component:LoginComponent},
-  {path: 'register',component:RegisterComponent},
+  {path: '',component:RegisterComponent},  //Landing page
   {path:'search',component:SearchComponent},
   {path:'add',component:AddItemComponent},
   {path:'logout',component:LogoutComponent},
@@ -26,4 +26,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-

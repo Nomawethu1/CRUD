@@ -42,12 +42,10 @@ exports.register = async (req, res) => {
             }
           })
         if (flag) {
-          const token = jwt.sign( //Signing a jwt token
-            {
-              email: user.email
-            },
-            process.env.SECRET_KEY
-          );
+          // const token = jwt.sign({
+          //     email: user.email},process.env.SECRET_KEY
+          // );
+          // user.token = token;
         };
       });
     }
@@ -55,7 +53,7 @@ exports.register = async (req, res) => {
   catch (err) {
     console.log(err);
     res.status(500).json({
-      error: "Database error while registring user!", //Database connection error
+      error: "Database error while registering user!", //Database connection error
     });
   };
 }

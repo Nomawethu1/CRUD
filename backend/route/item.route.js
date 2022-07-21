@@ -5,7 +5,7 @@ module.exports = app => {
       // import your controllers here!!
     const create = require("../controller/add-item");
     const update = require('../controller/edit-item');
-    const getItem=require('../controller/getItems');
+    const getItems=require('../controller/getItems');
     const getItemById=require('../controller/getItemById');
     const delItem= require('../controller/delete-Item');
 
@@ -13,7 +13,7 @@ module.exports = app => {
      // create your routes here!!
     app.post('/add', create.createItem)
     app.put('/edit/:id',update.updateEdit)
-    app.get('/getItem',getItem.getItems)
+    app.get('/getItems',getItems.getItems)
     app.get('/getItem/:id',getItemById.getItemById)
     app.delete('/delete/:id',delItem.deleteItem)
    

@@ -1,109 +1,129 @@
 <app-nav></app-nav>
-    
-        
-   
 
 
 
- 
-    <div class="container m-5 p-2 rounded mx-auto bg-light shadow">
-
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col col-lg-9 col-xl-7">
-           
-              
-                  <div class="row m-1 p-4">
-                    <div class="col">
-                      <div class="p-1 h1 text-center mx-auto display-inline-block">
-                        <div class="col-12 text-left">
-
-                          <div class="row">
-                            <div class="col-12 text-left">
 
 
-                              <div class="input-group gontse">
-                                <input class="form-control py-2 border-left border" type="search"
-                                  id="example-search-input" placeholder="search by title"
-                                  
-                             >
-
-                                <button class="btn btn btn" type="button" > 
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-search" viewBox="0 0 16 16">
-                                    <path
-                                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                                  </svg>
-                                </button>
-
-                              
-
-                              </div>
-                            </div>
-                          </div>
-                          <hr>
 
 
-                        </div>
-                      </div>
-                    </div>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                      <div class="col-12 text-right">
-                        <button type="submit" class="btn1 me-md-2 col-4"  routerLink="/add">
-                          New Item
-                        </button>
-                      </div>
-                    </div>
+<div class="container m-5 p-2 rounded mx-auto bg-light shadow">
+
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col col-lg-9 col-xl-7">
+
+
+      <div class="row m-1 p-4">
+        <div class="col">
+          <div class="p-1 h1 text-center mx-auto display-inline-block">
+            <div class="col-12 text-left">
+
+              <div class="row">
+                <div class="col-12 text-left">
+
+
+                  <div class="input-group gontse">
+                    <input class="form-control py-2 border-left border" type="search" id="example-search-input"
+                      placeholder="search by title">
+
+                    <button class="btn btn btn" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                      </svg>
+                    </button>
+
+
+
                   </div>
-                <!-- </form> -->
-
-                <table class="table mb-4">
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Title</th>
-                      <th scope="col">Description</th>
-                      <th scope="col">Due Date</th>
-                      <th scope="col">Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let i of items">
-                      <th scope="row">{{i.id}}</th>
-                      <td>{{i.itemname}}</td>
-                      <td>{{i.description}}</td>
-                      <td>{{i.duedate}}</td>
-                      <td>
-                        <div class="d-flex justify-content-between fridah">
-
-                          
-                          <button type="submit" class="btn btn-dark free me-md-5">View</button>
-                          <button type="submit" class="btn btn-dark free me-md-5" routerLink="/edit">Edit</button>
-                          <button type="submit" class="btn btn-dark free me-md-5">Delete</button>
-
-                   
-          
-
-          
+                </div>
+              </div>
+              <hr>
 
 
-                        
+            </div>
+          </div>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <div class="col-12 text-right">
+            <button type="submit" class="btn1 me-md-2 col-4" routerLink="/add">
+              New Item
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- </form> -->
 
-                         
-                         
-                        </div>
-                      </td>
-                    </tr>
-                    
+      <table class="table mb-4">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Due Date</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of items; let x = index">
+            <th scope="row">{{i.id}}</th>
+            <td>{{i.itemname}}</td>
+            <td>{{i.description}}</td>
+            <td>{{i.duedate}}</td>
+            <td>
+              <div class="d-flex justify-content-between fridah">
 
 
-                </table>
+                <button type="submit" class="btn btn-dark free me-md-5" data-toggle="modal"
+                  data-target="#centralModalSm" (click)="getItem(x)">View</button>
+                <button type="submit" class="btn btn-dark free me-md-5" routerLink="/edit">Edit</button>
+                <button type="submit" class="btn btn-dark free me-md-5">Delete</button>
+
+                <!-- end of model -->
+
+              </div>
+            </td>
+          </tr>
+
+      </table>
+
+
+          <!-- Model -->
+          <div *ngFor="let v of view" class="modal fade " id="centralModalSm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          aria-hidden="true">
+
+          <!-- Change class .modal-sm to change the size of the modal -->
+          <div class="modal-dialog modal-sm" role="document">
+
+
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title w-100" id="myModalLabel">{{v.id}}</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h6>Item: {{v.itemname}}</h6>
+                <h6>Description: {{v.description}}</h6>
+                <h6>Due date: {{v.duedate}}</h6>
+                <i class="bi bi-hand-thumbs-up-fill"></i>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal"
+                  routerlink="/search">OK</button>
+
               </div>
             </div>
           </div>
-        <!-- </div> -->
-      <!-- </div> -->
-    
-    <!-- </section> -->
-  <!-- </div> -->
-  <!-- </form> -->
+        </div>
+        
+    </div>
+  </div>
+</div>
+<!-- </div> -->
+<!-- </div> -->
 
+<!-- </section> -->
+<!-- </div> -->
+<!-- </form> -->

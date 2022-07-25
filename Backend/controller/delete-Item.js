@@ -17,7 +17,7 @@ pool.query('DELETE FROM item WHERE id = $1',[id],(error,results)=>
         throw error
     }
 
-    response.status(200).send(`users deleted with ID : ${id}`)
+    response.status(200).send(`item deleted with ID : ${id}`)
 })
 }
 

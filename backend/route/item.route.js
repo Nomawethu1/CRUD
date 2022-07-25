@@ -11,7 +11,7 @@ module.exports = app => {
 
     
      // create your routes here!!
-    app.post('/add', create.createItem)
+    app.post('/addItem', create.createItem)
     app.put('/edit/:id',update.updateEdit)
     app.get('/getItems',getItems.getItems)
     app.get('/getItem/:id',getItemById.getItemById)

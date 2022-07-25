@@ -23,9 +23,10 @@ export class ItemsService {
     }
 
  
-    // createItems(){
-    //   return this.http.post( `${this.baseUrl}` + '/createItem');
-    // }
+    deleteItem(id: any){
+      return this.http.delete(`${this.baseUrl}` +'/delete'+ `/${id}`);
+      
+    }
 
 
   }

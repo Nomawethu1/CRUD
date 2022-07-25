@@ -8,9 +8,6 @@ const getItemById=(request,response) =>{
 
     pool.query('SELECT * FROM item WHERE id = $1',[id],(error,results)=>{
 
-
-
-
         if(error)
         {
 
@@ -22,6 +19,5 @@ const getItemById=(request,response) =>{
 }
 
 module.exports={
-
     getItemById
 }

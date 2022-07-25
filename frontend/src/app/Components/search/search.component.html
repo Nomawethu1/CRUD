@@ -65,7 +65,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let i of items; let x = index">
+          <tr *ngFor="let i of items; let x = index; let t of too">
             <th scope="row">{{i.id}}</th>
             <td>{{i.itemname}}</td>
             <td>{{i.description}}</td>
@@ -76,8 +76,9 @@
 
                 <button type="submit" class="btn btn-dark free me-md-5" data-toggle="modal"
                   data-target="#centralModalSm" (click)="getItem(x)">View</button>
+
                 <button type="submit" class="btn btn-dark free me-md-5" routerLink="/edit">Edit</button>
-                <button type="submit" class="btn btn-dark free me-md-5">Delete</button>
+                <button type="submit" class="btn btn-dark free me-md-5" (click)="delete(t)">Delete</button>
 
                 <!-- end of model -->
 
@@ -111,7 +112,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal"
-                  routerlink="/search">OK</button>
+                  routerLink="/search">OK</button>
 
               </div>
             </div>

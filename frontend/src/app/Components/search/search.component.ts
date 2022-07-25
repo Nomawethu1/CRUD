@@ -42,11 +42,18 @@ _view :any;
   }
 
   getItem(id: any){
-    this.serv.getItemByID(id).subscribe(data =>{
+    this.serv.getItemByID(id+1).subscribe(data =>{
       console.log(data);
       this.view =data;
      
       // localStorage.setItem("Item", JSON.stringify(this.view));
+    })
+  }
+
+  delete(id: any){
+    this.serv.deleteItem(id+1).subscribe(data =>{
+      console.log(data);
+      this.too = data;
     })
   }
 

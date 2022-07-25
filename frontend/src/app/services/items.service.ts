@@ -16,6 +16,13 @@ export class ItemsService {
      createItem(itemData: any){
       return this.http.post( `${this.baseUrl}` + '/add', itemData);
     }
+
+    getItemByID(id: any){
+      return this.http.get(`${this.baseUrl}` +'/getItem'+ `/${id}`);
+      
+    }
+
+ 
     // createItems(){
     //   return this.http.post( `${this.baseUrl}` + '/createItem');
     // }

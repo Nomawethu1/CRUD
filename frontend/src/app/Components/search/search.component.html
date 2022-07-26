@@ -1,11 +1,5 @@
 <app-nav></app-nav>
 
-
-
-
-
-
-
 <div class="container m-5 p-2 rounded mx-auto bg-light shadow">
 
   <div class="row d-flex justify-content-center align-items-center h-100">
@@ -46,7 +40,7 @@
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
           <div class="col-12 text-right">
-            <button type="submit" class="btn1 me-md-2 col-4" routerLink="/add">
+            <button type="submit" class="btn1 me-md-2 col-4" routerLink="/addItem">
               New Item
             </button>
           </div>
@@ -78,15 +72,45 @@
                   data-target="#centralModalSm" (click)="getItem(x)">View</button>
 
                 <button type="submit" class="btn btn-dark free me-md-5" routerLink="/edit">Edit</button>
-                <button type="submit" class="btn btn-dark free me-md-5" (click)="delete(t)">Delete</button>
+                <button type="submit" class="btn btn-dark free me-md-5" data-toggle="modal" data-target="#modelId" >Delete</button>
 
-                <!-- end of model -->
+                
 
               </div>
+
+
+<!--  delete Modal start -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Delete item</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          Are you sure you want to delete your account? {{x}}
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="delete(x)" data-dismiss="modal">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal end -->
             </td>
           </tr>
 
+
       </table>
+
+     
+
+      <!-- end of delete -->
 
 
           <!-- Model -->
@@ -99,7 +123,7 @@
 
             <div class="modal-content">
               <div class="modal-header">
-                <h4 class="modal-title w-100" id="myModalLabel">{{v.id}}</h4>
+                <h4 class="modal-title w-100" id="myModalLabel">Item {{v.id}}</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -128,3 +152,17 @@
 <!-- </section> -->
 <!-- </div> -->
 <!-- </form> -->
+
+<!-- Button trigger modal -->
+
+
+
+
+<script>
+  $('#exampleModal').on('show.bs.modal', event => {
+    var button = $(event.relatedTarget);
+    var modal = $(this);
+    // Use above variables to manipulate the DOM
+    
+  });
+</script>

@@ -13,7 +13,7 @@ export class EditService {
   // id :any
   
   addItems(items:any):Observable<any>{
-    return this.http.post<any>("http://localhost:3000/add",items);
+    return this.http.post<any>("http://localhost:3000/addItem",items);
   }
 
   editItems(items:any):Observable<any>{

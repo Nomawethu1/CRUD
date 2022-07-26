@@ -14,7 +14,7 @@ export class ItemsService {
   constructor(private http: HttpClient) { }
 
      createItem(itemData: any){
-      return this.http.post( `${this.baseUrl}` + '/add', itemData);
+      return this.http.post( `${this.baseUrl}` + '/addItem', itemData);
     }
 
     getItemByID(id: any){

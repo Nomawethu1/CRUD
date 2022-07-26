@@ -12,9 +12,9 @@ import { ProfileComponent } from './Components/profile/profile.component';
 const routes: Routes = [
   {path:'edit',component:EditItemComponent},
   {path:'login',component:LoginComponent},
-  {path: 'register',component:RegisterComponent},  //Landing page
+  {path: '',component:RegisterComponent},  //Landing page
   {path:'search',component:SearchComponent},
-  {path:'add',component:AddItemComponent},
+  {path:'addItem',component:AddItemComponent},
   {path:'logout',component:LogoutComponent},
   {path:'profile',component:ProfileComponent}
   

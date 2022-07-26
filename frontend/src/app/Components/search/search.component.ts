@@ -22,11 +22,6 @@ _view :any;
  
    }
 
-
- 
-   
-  
-
   ngOnInit(): void {
 
     this.service.getItems().subscribe(data =>{
@@ -37,8 +32,6 @@ _view :any;
     this._view = localStorage.getItem("inf")
     console.log(this._view , "easrdtfyguhijo")
 
-
-    
   }
 
   getItem(id: any){
@@ -56,16 +49,5 @@ _view :any;
       this.too = data;
     })
   }
-
-
-
-// viewItem(item : any):void{
-//   this.getItem(item);
-//   console.log(item , "qwertyuio")
-// }
-// getItems(ind :any){
-//   localStorage.setItem("info",JSON.stringify(this.view[ind]))
-// }
-  
 
 }

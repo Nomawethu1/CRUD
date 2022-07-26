@@ -38,19 +38,29 @@ export class AddItemComponent implements OnInit {
 
   onSubmit(): void {
 
-    console.log(JSON.stringify(this.form.value, null, 2));
+    // console.log(JSON.stringify(this.form.value, null, 2));
     console.log(this.form.value)
 
-    let details = {
-      itemname: this.form.value.itemname,
-      description: this.form.value.description,
-      duedate: this.form.value.duedate
+    // let details = {
+    //   itemname: this.form.value.itemname,
+    //   description: this.form.value.description,
+    //   duedate: this.form.value.duedate
 
-    }
+    // }
 
-    // console.log("this detsils"+ details.description)
-    this.createItem(details)
-    localStorage.setItem("form", JSON.stringify(this.form.value, null, 2))
+    // // console.log("this detsils"+ details.description)
+    // this.createItem(details)
+    // localStorage.setItem("form", JSON.stringify(this.form.value, null, 2))
+
+    this.addService.addItems(this.form.value).subscribe(
+      resp => {
+        console.log(resp);
+
+      },
+      (err: any) => {
+        console.log("wow" + err);
+      }
+    );
   }
 
 
